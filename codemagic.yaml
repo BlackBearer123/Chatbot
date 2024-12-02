@@ -8,7 +8,7 @@ workflows:
       - git:
           branches:
             include:
-              - main
+              - master
     environment:
       vars:
         NODE_VERSION: "16.0.0"
