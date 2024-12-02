@@ -1,0 +1,18 @@
+workflows:
+  expo-workflow:
+    name: Expo Android Build
+    environment:
+      node: 16.x
+      npm: 8.x
+    scripts:
+      - name: Install dependencies
+        script: |
+          npm install
+
+      - name: Install Expo CLI
+        script: |
+          npm install -g expo-cli
+
+      - name: Build Android APK
+        script: |
+          expo build:android -t apk
