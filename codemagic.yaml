@@ -1,18 +1,9 @@
-workflows:
-  expo-workflow:
-    name: Expo Android Build
-    environment:
-      node: 16.x
-      npm: 8.x
-    scripts:
-      - name: Install dependencies
-        script: |
-          npm install
+version: 2.0
 
-      - name: Install Expo CLI
-        script: |
-          npm install -g expo-cli
+build:
+  scripts:
+    - cd android
+    - ./gradlew assembleRelease
 
-      - name: Build Android APK
-        script: |
-          expo build:android -t apk
+artifacts:
+  - build/android/app/build/outputs/apk/release/app-release.apk
